@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/Alejandro012325/importador-sheets.git', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/importador-sheets', '.']
+images:
+- 'gcr.io/$PROJECT_ID/importador-sheets'
